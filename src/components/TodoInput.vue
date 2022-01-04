@@ -16,63 +16,64 @@
 </template>
 
 <script>
-import Modal from "./common/Modal.vue";
+  import Modal from './common/Modal.vue';
 
-export default {
-  data: function () {
-    return {
-      newTodoItem: "",
-      showModal: false,
-    };
-  },
-  methods: {
-    addTodo: function () {
-      if (this.newTodoItem !== "") {
-        this.$emit("addTodoItem", this.newTodoItem);
-        this.clearInput();
-      } else {
-        this.showModal = !this.showModal;
-      }
+  export default {
+    data() {
+      return {
+        newTodoItem: '',
+        showModal: false,
+      };
     },
-    clearInput: function () {
-      this.newTodoItem = "";
+    methods: {
+      addTodo() {
+        if (this.newTodoItem !== '') {
+          this.$emit('addTodoItem', this.newTodoItem);
+          this.clearInput();
+        } else {
+          this.showModal = !this.showModal;
+        }
+      },
+      clearInput() {
+        this.newTodoItem = '';
+      },
     },
-  },
-  components: {
-    Modal: Modal,
-  },
-};
+    components: {
+      Modal,
+    },
+  };
 </script>
 
 <style scoped>
-input:focus {
-  outline: none;
-}
-.inputBox {
-  height: 50px;
-  background: #ffffff;
-  border-radius: 5px;
-  line-height: 50px;
-}
-.inputBox input {
-  border-style: none;
-  font-size: 0.9rem;
-}
-.addContainer {
-  display: block;
-  float: right;
-  width: 3rem;
-  background: linear-gradient(to right, #fff382, #ffbb1d);
-  border-radius: 0 5px 5px 0;
-}
-.addBtn {
-  color: #ffffff;
-  vertical-align: middle;
-}
-.closeModalBtn {
-  padding: 10px 50px;
-  background: #ffbb1d;
-  color: #ffffff;
-  border-radius: 5px;
-}
+  input:focus {
+    outline: none;
+  }
+  .inputBox {
+    height: 50px;
+    background: #ffffff;
+    border-radius: 5px;
+    line-height: 50px;
+  }
+  .inputBox input {
+    width: 75%;
+    border-style: none;
+    font-size: 0.9rem;
+  }
+  .addContainer {
+    display: block;
+    float: right;
+    width: 3rem;
+    background: linear-gradient(to right, #fff382, #ffbb1d);
+    border-radius: 0 5px 5px 0;
+  }
+  .addBtn {
+    color: #ffffff;
+    vertical-align: middle;
+  }
+  .closeModalBtn {
+    padding: 10px 50px;
+    background: #ffbb1d;
+    color: #ffffff;
+    border-radius: 5px;
+  }
 </style>

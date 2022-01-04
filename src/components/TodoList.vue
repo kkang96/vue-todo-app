@@ -25,60 +25,60 @@
 </template>
 
 <script>
-export default {
-  props: ["propsdata"],
-  methods: {
-    removeTodo: function (todoItem, index) {
-      this.$emit("removeTodoItem", todoItem, index);
-      // console.log(index, todoItem);
+  export default {
+    props: ['propsdata'],
+    methods: {
+      removeTodo(todoItem, index) {
+        this.$emit('removeTodoItem', todoItem, index);
+        // console.log(index, todoItem);
+      },
+      toggleComplete(todoItem, index) {
+        this.$emit('toggleTodoItem', todoItem, index);
+      },
     },
-    toggleComplete: function (todoItem, index) {
-      this.$emit("toggleTodoItem", todoItem, index);
-    },
-  },
-};
+  };
 </script>
 
 <style scroped>
-ul {
-  list-style: none;
-  margin-top: 0;
-  padding-left: 0px;
-  text-align: left;
-}
-li {
-  display: flex;
-  height: 50px;
-  min-height: 50px;
-  margin: 0.5rem 0;
-  padding: 0 0.9rem;
-  background: #ffffff;
-  border-radius: 5px;
-  line-height: 50px;
-}
-.removeBtn {
-  margin-left: auto;
-  color: #ff6b66;
-}
-.checkBtn {
-  margin-right: 5px;
-  color: #facc61;
-  line-height: 45px;
-}
-.checkBtnCompleted {
-  color: #b3adad;
-}
-.textCompleted {
-  color: #b3adad;
-  text-decoration: line-through;
-}
-/* 리스트 아이템 트랜지션 효과 */
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
+  ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0px;
+    text-align: left;
+  }
+  li {
+    display: flex;
+    height: 50px;
+    min-height: 50px;
+    margin: 0.5rem 0;
+    padding: 0 0.9rem;
+    background: #ffffff;
+    border-radius: 5px;
+    line-height: 50px;
+  }
+  .removeBtn {
+    margin-left: auto;
+    color: #ff6b66;
+  }
+  .checkBtn {
+    margin-right: 5px;
+    color: #facc61;
+    line-height: 45px;
+  }
+  .checkBtnCompleted {
+    color: #b3adad;
+  }
+  .textCompleted {
+    color: #b3adad;
+    text-decoration: line-through;
+  }
+  /* 리스트 아이템 트랜지션 효과 */
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 1s;
+  }
+  .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 </style>
